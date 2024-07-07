@@ -73,12 +73,18 @@ Route::middleware('auth')->group(function () {
         Route::get('', 'index')->name('alternatif');
         Route::get('create', 'create')->name('alternatif.create');
         Route::post('store', 'store')->name('alternatif.store');
+        Route::get('edit/{id}', 'edit')->name('alternatif.edit');
+        Route::put('edit/{id}', 'update')->name('alternatif.update');
+        Route::delete('destroy/{id}', 'destroy')->name('alternatif.destroy');
     });
 
     Route::controller(KriteriaController::class)->prefix('kriterias')->group(function () {
         Route::get('', 'index')->name('kriteria');
         Route::get('create', 'create')->name('kriteria.create');
         Route::post('store', 'store')->name('kriteria.store');
+        Route::get('edit/{id}', 'edit')->name('kriteria.edit');
+        Route::put('edit/{id}', 'update')->name('kriteria.update');
+        Route::delete('destroy/{id}', 'destroy')->name('kriteria.destroy');
     });   
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
@@ -95,8 +101,14 @@ Route::get('/penilaian/calculate', [PenilaianController::class, 'calculate'])->n
 
 Route::get('/perhitungan/topsis', [CalculateController::class, 'topsis'])->name('calculate.topsis');
 
+Route::get('/forgotpass', function(){
+    return view('auth.forgotpassword');
+})->name('forgotpass');
 
-Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+// Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+

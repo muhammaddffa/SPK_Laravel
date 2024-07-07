@@ -50,7 +50,10 @@ class AlternatifController extends Controller
      */
     public function edit(string $id)
     {
-        //
+          
+        $alternatif = Alternatif::findOrFail($id);
+  
+        return view('alternatif.edit', compact('alternatif'));
     }
 
     /**
@@ -58,7 +61,11 @@ class AlternatifController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $alternatif = Alternatif::findOrFail($id);
+  
+        $alternatif->update($request->all());
+  
+        return redirect()->route('alternatif')->with('success', 'product updated successfully');
     }
 
     /**

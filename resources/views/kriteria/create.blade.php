@@ -3,7 +3,7 @@
 @section('title', 'Create Alternatif')
   
 @section('contents')
-    <h1 class="mb-0">Add Alternatif</h1>
+    <h1 class="mb-0">Add Kriteria</h1>
     <hr />
     <form action="{{ route('kriteria.store') }}" method="POST" enctype="multipart/form-data">
         @csrf

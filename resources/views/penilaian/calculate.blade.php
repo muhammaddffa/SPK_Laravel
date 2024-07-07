@@ -12,16 +12,16 @@
                     <thead>
                         <tr>
                             <th>Nama Alternatif</th>
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($criteria as $kriteria)
                                 <th>{{ $kriteria->kriteria}}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($alternatifs as $alternatif)
+                        @foreach ($alternatives as $alternatif)
                             <tr>
                                 <td>{{ $alternatif->nama}}</td>
-                                @foreach ($kriterias as $kriteria)
+                                @foreach ($criteria as $kriteria)
                                     <td>{{ $matrixPenilaian[$alternatif->id][$kriteria->id] }}</td>
                                 @endforeach
                             </tr>
@@ -36,16 +36,16 @@
                     <thead>
                         <tr>
                             <th>Nama Alternatif</th>
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($criteria as $kriteria)
                                 <th>{{ $kriteria->kriteria}}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($alternatifs as $alternatif)
+                        @foreach ($alternatives as $alternatif)
                             <tr>
                                 <td>{{ $alternatif->nama}}</td>
-                                @foreach ($kriterias as $kriteria)
+                                @foreach ($criteria as $kriteria)
                                     <td>{{ number_format($matrixNormalisasi[$alternatif->id][$kriteria->id], 4) }}</td>
                                 @endforeach
                             </tr>
@@ -66,7 +66,7 @@
                     <tbody>
                         @foreach ($nilaiPreferensi as $altId => $nilai)
                             <tr>
-                                <td>{{ $alternatifs->find($altId)->nama}}</td>
+                                <td>{{ $alternatives->find($altId)->nama}}</td>
                                 <td>{{ number_format($nilai, 4) }}</td>
                             </tr>
                         @endforeach

@@ -13,17 +13,17 @@
                     <thead>
                         <tr>
                             <th>Alternatif</th>
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($criteria as $kriteria)
                                 <th>{{ $kriteria->kriteria}}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($matrixNormalisasi as $altId => $nilai)
+                        @foreach ($normMatrix as $altIndex => $nilai)
                             <tr>
-                                <td>{{ $alternatifs->find($altId)->nama}}</td>
-                                @foreach ($kriterias as $kriteria)
-                                    <td>{{ number_format($nilai[$kriteria->id], 4) }}</td>
+                                <td>{{ $alternatives[$altIndex]->nama }}</td>
+                                @foreach ($nilai as $val)
+                                    <td>{{ number_format($val, 4) }}</td>
                                 @endforeach
                             </tr>
                         @endforeach
@@ -42,17 +42,17 @@
                     <thead>
                         <tr>
                             <th>Alternatif</th>
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($criteria as $kriteria)
                                 <th>{{ $kriteria->kriteria}}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($matrixTerbobot as $altId => $nilai)
+                        @foreach ($weightedNorm as $altIndex => $nilai)
                             <tr>
-                                <td>{{ $alternatifs->find($altId)->nama}}</td>
-                                @foreach ($kriterias as $kriteria)
-                                    <td>{{ number_format($nilai[$kriteria->id], 4) }}</td>
+                                <td>{{ $alternatives[$altIndex]->nama }}</td>
+                                @foreach ($nilai as $val)
+                                    <td>{{ number_format($val, 4) }}</td>
                                 @endforeach
                             </tr>
                         @endforeach
@@ -70,14 +70,14 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($criteria as $kriteria)
                                 <th>{{ $kriteria->kriteria}}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            @foreach ($solusiIdealPositif as $kriteriaId => $nilai)
+                            @foreach ($idealPositive as $nilai)
                                 <td>{{ number_format($nilai, 4) }}</td>
                             @endforeach
                         </tr>
@@ -94,14 +94,14 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($criteria as $kriteria)
                                 <th>{{ $kriteria->kriteria}}</th>
                             @endforeach
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            @foreach ($solusiIdealNegatif as $kriteriaId => $nilai)
+                            @foreach ($idealNegative as $nilai)
                                 <td>{{ number_format($nilai, 4) }}</td>
                             @endforeach
                         </tr>
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <!-- Jarak Solusi Ideal Positif dan Negatif -->
+    <!-- Jarak Solusi Ideal Positif -->
     <div class="card shadow mb-4">
         <div class="card-body">
             <h5>Jarak Solusi Ideal Positif</h5>
@@ -120,18 +120,14 @@
                     <thead>
                         <tr>
                             <th>Alternatif</th>
-                            @foreach ($kriterias as $kriteria)
-                                <th>{{ $kriteria->kriteria}}</th>
-                            @endforeach
+                            <th>Jarak Positif</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($jarakPositif as $altId => $nilai)
+                        @foreach ($solutionPositive as $altIndex => $nilai)
                             <tr>
-                                <td>{{ $alternatifs->find($altId)->nama}}</td>
-                                @foreach ($kriterias as $kriteria)
-                                    <td>{{ number_format($nilai, 4) }}</td>
-                                @endforeach
+                                <td>{{ $alternatives[$altIndex]->nama }}</td>
+                                <td>{{ number_format($nilai, 4) }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -140,6 +136,7 @@
         </div>
     </div>
 
+    <!-- Jarak Solusi Ideal Negatif -->
     <div class="card shadow mb-4">
         <div class="card-body">
             <h5>Jarak Solusi Ideal Negatif</h5>
@@ -148,18 +145,14 @@
                     <thead>
                         <tr>
                             <th>Alternatif</th>
-                            @foreach ($kriterias as $kriteria)
-                                <th>{{ $kriteria->kriteria}}</th>
-                            @endforeach
+                            <th>Jarak Negatif</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($jarakNegatif as $altId => $nilai)
+                        @foreach ($solutionNegative as $altIndex => $nilai)
                             <tr>
-                                <td>{{ $alternatifs->find($altId)->nama}}</td>
-                                @foreach ($kriterias as $kriteria)
-                                    <td>{{ number_format($nilai, 4) }}</td>
-                                @endforeach
+                                <td>{{ $alternatives[$altIndex]->nama }}</td>
+                                <td>{{ number_format($nilai, 4) }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -182,11 +175,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php $rank = 1; @endphp
-                        @foreach ($nilaiPreferensi as $altId => $nilai)
+                        @php 
+                            $rank = 1; 
+                            $sortedPreferences = collect($preferenceValue)->sortDesc()->toArray();
+                        @endphp
+                        @foreach ($sortedPreferences as $altIndex => $nilai)
                             <tr>
                                 <td>{{ $rank++ }}</td>
-                                <td>{{ $alternatifs->find($altId)->nama}}</td>
+                                <td>{{ $alternatives[$altIndex]->nama }}</td>
                                 <td>{{ number_format($nilai, 4) }}</td>
                             </tr>
                         @endforeach
