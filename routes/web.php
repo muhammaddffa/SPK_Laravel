@@ -3,10 +3,10 @@
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CalculateController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PenilaianController;
-use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,11 +33,13 @@ Route::get('/about', function(){
     return view('about');
 })->name('about');
 
+Route::get('/contact', function(){
+    return view('contact');
+})->name('contact');
+
 Route::get('/misal', function(){
     return view('misal.index');
 })->name('misal');
-
-// Route::post('/login/google', [AuthController::class, 'loginWithGoogle'])->name('login.google');
 
 
 // Route::get('/home', function(){
@@ -53,6 +55,10 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 
 });
+
+// Auth::routes(['verify' => true ]);
+
+// Route::get('/home', [App\Http\Controllers\AuthController::class, 'index'])->name('login');
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
@@ -104,6 +110,16 @@ Route::get('/perhitungan/topsis', [CalculateController::class, 'topsis'])->name(
 Route::get('/forgotpass', function(){
     return view('auth.forgotpassword');
 })->name('forgotpass');
+
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
+// Route::get('/forgotpass', function(){
+//     return view('auth.forgotpassword');
+// })->name('forgotpass');
 
 
 // Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');

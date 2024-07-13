@@ -22,7 +22,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
+                <table id="penilaianTable" class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -40,7 +40,7 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $alternatif->code_alternatif }}</td>
-                                <td>{{ $alternatif->nama}}</td>
+                                <td>{{ $alternatif->nama }}</td>
                                 @foreach ($kriterias as $kriteria)
                                     @php
                                         $penilaian = $penilaians->where('alternatif_id', $alternatif->id)->where('kriteria_id', $kriteria->id)->first();
@@ -63,3 +63,17 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#penilaianTable').DataTable();
+        });
+    </script>
+@endpush
+
+@push('styles')
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+@endpush

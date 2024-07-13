@@ -9,7 +9,7 @@
         <div class="card-body">
             <h5>Matriks Normalisasi</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="normMatrixTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Alternatif</th>
@@ -38,7 +38,7 @@
         <div class="card-body">
             <h5>Matriks Normalisasi Terbobot</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="weightedNormTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Alternatif</th>
@@ -67,7 +67,7 @@
         <div class="card-body">
             <h5>Solusi Ideal Positif</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="idealPositiveTable" class="table table-bordered">
                     <thead>
                         <tr>
                             @foreach ($criteria as $kriteria)
@@ -91,7 +91,7 @@
         <div class="card-body">
             <h5>Solusi Ideal Negatif</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="idealNegativeTable" class="table table-bordered">
                     <thead>
                         <tr>
                             @foreach ($criteria as $kriteria)
@@ -116,7 +116,7 @@
         <div class="card-body">
             <h5>Jarak Solusi Ideal Positif</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="solutionPositiveTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Alternatif</th>
@@ -141,7 +141,7 @@
         <div class="card-body">
             <h5>Jarak Solusi Ideal Negatif</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="solutionNegativeTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Alternatif</th>
@@ -166,7 +166,7 @@
         <div class="card-body">
             <h5>Nilai Preferensi dan Perankingan</h5>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table id="preferenceTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Peringkat</th>
@@ -191,4 +191,26 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+        <!-- DataTables JavaScript -->
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#normMatrixTable').DataTable();
+                $('#weightedNormTable').DataTable();
+                $('#idealPositiveTable').DataTable();
+                $('#idealNegativeTable').DataTable();
+                $('#solutionPositiveTable').DataTable();
+                $('#solutionNegativeTable').DataTable();
+                $('#preferenceTable').DataTable();
+            });
+        </script>
+    @endpush
+    
+    @push('styles')
+        <!-- DataTables CSS -->
+        <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    @endpush
 @endsection
+

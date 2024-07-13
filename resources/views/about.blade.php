@@ -20,9 +20,7 @@
                     style="transition: transform 0.5s ease;">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Hospital Mitra Keluarga</h3>
-                    <p class="mt-4 text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quo
-                        veritatis dolores modi sunt nisi! Dolores veniam, recusandae fugit pariatur adipisci neque
-                        voluptates minima, quaerat eos vitae cum vel velit!</p>
+                    <p class="mt-4 text-gray-600">Rumah Sakit Mitra Keluarga Tegal merupakan salah satu rumah sakit terkemuka yang berkomitmen memberikan layanan kesehatan berkualitas tinggi. Dengan fasilitas modern dan tenaga medis profesional, kami siap melayani kebutuhan kesehatan Anda dan keluarga.</p>
                 </div>
             </div>
 
@@ -32,9 +30,7 @@
                     style="transition: transform 0.5s ease;">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Hospital Kardinah</h3>
-                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
-                        velit minus ullam sed fugiat commodi voluptatibus repellendus optio sit temporibus possimus
-                        repellat sapiente maiores molestiae, totam nihil quidem, consequatur aperiam?</p>
+                    <p class="mt-4 text-gray-600">RS Kardinah dikenal sebagai rumah sakit dengan pelayanan kesehatan yang unggul dan berfokus pada kenyamanan pasien. Kami menyediakan berbagai layanan medis termasuk rawat inap, rawat jalan, dan fasilitas diagnostik yang lengkap. Tim medis kami terdiri dari dokter-dokter spesialis yang berpengalaman dan profesional</p>
                 </div>
             </div>
 
@@ -44,9 +40,7 @@
                     style="transition: transform 0.5s ease;">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Hospital Islam Harapan Anda</h3>
-                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
-                        temporibus magnam culpa soluta, asperiores eligendi adipisci iusto sequi nobis eveniet sapiente
-                        obcaecati? Adipisci quod dolorum dolores impedit fugit libero. Rem.</p>
+                    <p class="mt-4 text-gray-600">RS Islam menawarkan layanan kesehatan yang berkualitas dengan mengedepankan nilai-nilai Islami. Kami menyediakan berbagai layanan medis, termasuk poliklinik spesialis, layanan rawat inap, dan unit gawat darurat. Dengan tenaga medis yang berpengalaman dan fasilitas yang modern</p>
                 </div>
             </div>
 
@@ -57,9 +51,8 @@
                     style="transition: transform 0.5s ease;">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Hopital Susilo</h3>
-                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
-                        temporibus magnam culpa soluta, asperiores eligendi adipisci iusto sequi nobis eveniet sapiente
-                        obcaecati? Adipisci quod dolorum dolores impedit fugit libero. Rem.</p>
+                    <p class="mt-4 text-gray-600">RS Susilo adalah rumah sakit yang fokus pada pelayanan kesehatan yang menyeluruh dan berkualitas. Kami menawarkan berbagai layanan medis seperti rawat jalan, rawat inap, bedah, dan unit gawat darurat. RS Susilo selalu berupaya memberikan pelayanan terbaik dengan mengutamakan kenyamanan dan kepuasan pasien
+                    </p>
                 </div>
             </div>
 
@@ -68,9 +61,7 @@
                     style="transition: transform 0.5s ease;">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800">Hospita Mitra Siaga</h3>
-                    <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
-                        temporibus magnam culpa soluta, asperiores eligendi adipisci iusto sequi nobis eveniet sapiente
-                        obcaecati? Adipisci quod dolorum dolores impedit fugit libero. Rem.</p>
+                    <p class="mt-4 text-gray-600">RS Mitra Siaga berkomitmen untuk menyediakan pelayanan kesehatan yang berkualitas tinggi dengan sentuhan personal. Kami menyediakan berbagai layanan medis seperti rawat inap, rawat jalan, dan layanan darurat. Dengan fasilitas modern dan tim medis profesional</p>
                 </div>
             </div>
 

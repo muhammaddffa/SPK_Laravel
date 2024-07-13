@@ -70,6 +70,10 @@ class KriteriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kriteria = Kriteria::findOrFail($id);
+  
+        $kriteria->delete();
+  
+        return redirect()->route('kriteria')->with('success', 'product deleted successfully');
     }
 }
